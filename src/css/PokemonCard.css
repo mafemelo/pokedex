@@ -1,0 +1,118 @@
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.pokemon-card:hover {
+  border-color: var(--tc);
+  transform: translateY(-3px);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+}
+
+.card-id {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: 2px;
+  margin-right: -6px;
+}
+
+/* Área clicável principal (abre os detalhes) */
+.card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+}
+
+/* círculo suave com a cor do tipo atrás da imagem */
+.card-art {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--tc) 16%, var(--panel-2));
+}
+
+.card-img,
+.card-art .pokeball-fallback {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.pokemon-card:hover .card-img {
+  transform: scale(1.06);
+}
+
+.card-name {
+  font-size: 1.15rem;
+  margin-top: 4px;
+}
+
+.card-types {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Atributos em uma linha de números */
+.card-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 4px;
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.card-stats div {
+  text-align: center;
+}
+
+.card-stats dt {
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.card-stats dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .card-art {
+    width: 110px;
+    height: 110px;
+  }
+  .card-img,
+  .card-art .pokeball-fallback {
+    width: 92px;
+    height: 92px;
+  }
+  .card-name {
+    font-size: 1rem;
+  }
+}

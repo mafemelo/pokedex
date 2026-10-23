@@ -1,0 +1,15 @@
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 64px 20px;
+  text-align: center;
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+}
+
+.empty-state p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  max-width: 40ch;
+}

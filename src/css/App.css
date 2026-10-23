@@ -1,0 +1,277 @@
+/* ===== Layout geral ===== */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.main {
+  padding-top: 28px;
+}
+
+.footer {
+  margin-top: 56px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.page-title {
+  font-size: 1.8rem;
+}
+
+.page-sub {
+  color: var(--muted);
+  margin: 6px 0 28px;
+}
+
+.result-count {
+  color: var(--muted);
+  margin: 20px 0 6px;
+  font-size: 0.9rem;
+}
+
+/* ===== Botões ===== */
+.btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.btn-ghost {
+  background: var(--panel);
+  border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--text);
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.icon-btn.on {
+  color: var(--star);
+}
+
+/* ===== Controles (pesquisa, tipo, ordenação) ===== */
+.controls-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  height: 42px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.select-wrap select {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.select-wrap select option {
+  background: var(--panel);
+  color: var(--text);
+}
+
+.controls-top .btn {
+  height: 42px;
+  padding: 0 16px;
+}
+
+/* ===== Alternar carrossel / grade ===== */
+.view-toggle {
+  display: flex;
+  padding: 3px;
+  gap: 2px;
+  height: 42px;
+  background: var(--panel-2);
+  border-radius: 10px;
+}
+
+.view-toggle button {
+  border: none;
+  background: transparent;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.view-toggle button.active {
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Tipo: pontinho colorido + nome ===== */
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.type-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ===== Barras de atributos ===== */
+.stat-bar {
+  display: grid;
+  grid-template-columns: 96px 34px 1fr;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: var(--muted);
+}
+
+.stat-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+.stat-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--panel-2);
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--tc);
+  transform-origin: left;
+  animation: encher 0.6s ease-out;
+}
+
+@keyframes encher {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ===== Plano B quando a imagem não carrega ===== */
+.pokeball-fallback {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+}
+
+/* ===== Barra de comparação (fixa embaixo) ===== */
+.compare-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 8px 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+  z-index: 20;
+  max-width: calc(100vw - 24px);
+}
+
+.compare-bar span {
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.compare-bar .btn {
+  padding: 8px 14px;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 0 16px 110px;
+  }
+  .controls-top {
+    gap: 8px;
+  }
+  .controls-top > .search-bar,
+  .controls-top > .view-toggle {
+    flex: 1 1 100%;
+  }
+  .controls-top > .select-wrap,
+  .controls-top > .btn {
+    flex: 1 1 40%;
+  }
+  .select-wrap > span {
+    display: none;
+  }
+  .select-wrap select {
+    width: 100%;
+  }
+  .view-toggle button {
+    flex: 1;
+  }
+  .compare-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100vw - 24px);
+    padding: 12px;
+  }
+}

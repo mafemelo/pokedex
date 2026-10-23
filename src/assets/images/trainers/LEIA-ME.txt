@@ -1,0 +1,5 @@
+Quer usar fotos reais dos treinadores?
+Coloque aqui arquivos .png, .jpg ou .webp com o nome do treinador em minúsculo:
+ash.png, brock.png, misty.png, lt-surge.png, erika.png, koga.png, sabrina.png,
+blaine.png, giovanni.png, gary.png, team-rocket.png, lance.png
+Se a foto existir, ela aparece no lugar do avatar desenhado.

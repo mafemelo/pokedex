@@ -1,0 +1,78 @@
+.compare {
+  padding: 28px 24px 26px;
+}
+
+.compare-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.compare-poke {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 18px 10px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--tc) 14%, var(--panel-2));
+}
+
+.compare-img,
+.compare-poke .pokeball-fallback {
+  width: 130px;
+}
+
+.compare-poke h3 {
+  font-size: 1.3rem;
+}
+
+.compare-id {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.compare-types {
+  display: flex;
+  gap: 12px;
+}
+
+.compare-rows {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-label {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.compare-val {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* quem ganha no atributo fica em destaque */
+.compare-val.win {
+  font-weight: 700;
+  color: var(--green);
+}
+
+@media (max-width: 520px) {
+  .compare {
+    padding: 22px 12px;
+  }
+  .compare-img {
+    width: 100px;
+  }
+}
